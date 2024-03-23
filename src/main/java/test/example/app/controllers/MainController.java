@@ -8,11 +8,13 @@ import test.example.app.db.UsersDB;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 public class MainController {
     @Autowired
     private UsersDB usersDB;
+    public static final List<String> APP_PAGES = List.of("/app", "/users");
 
     @GetMapping("/app")
     public String getMainPage(HttpServletRequest req) {

@@ -13,6 +13,8 @@ import test.example.app.provider.JwtProvider;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class AuthController {
@@ -20,6 +22,7 @@ public class AuthController {
     private UsersDB usersDB;
     @Autowired
     private JwtProvider jwtProvider;
+    public static final List<String> AUTH_PAGES = List.of("/login", "/sign-up");
 
     @GetMapping("/login")
     public String getLoginPage() {
