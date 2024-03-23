@@ -23,8 +23,6 @@ public class FilterForApp extends HttpFilter {
         HttpServletResponse response = (HttpServletResponse) servletRes;
         String token = (String)request.getSession().getAttribute("token");
         String url = request.getRequestURI().replace(request.getContextPath(), "");
-        boolean isTrue = AuthController.AUTH_PAGES.contains(url);
-        boolean iswerwer = MainController.APP_PAGES.contains(url);
 
         if (AuthController.AUTH_PAGES.contains(url) && token != null) {
             response.sendRedirect(request.getContextPath() + "/app");
