@@ -6,8 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import test.example.app.db.UsersDB;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -17,18 +15,8 @@ public class MainController {
     public static final List<String> APP_PAGES = List.of("/app", "/users");
 
     @GetMapping("/app")
-    public String getMainPage(HttpServletRequest req) {
-        Cookie[] cookies = req.getCookies();
-
-        for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("isAuth")) {
-                if(cookie.getValue().equals("true") || cookie.getValue() == null) {
-                    return "main";
-                }
-            }
-        }
-
-        return "redirect:/login";
+    public String getMainPage() {
+        return "main";
     }
 
     @GetMapping("/users")

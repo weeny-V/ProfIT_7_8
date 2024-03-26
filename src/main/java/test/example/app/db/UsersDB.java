@@ -28,12 +28,6 @@ public class UsersDB {
         return userData.values();
     }
 
-    public User findByLogin(String login) {
-        return userData.values().stream()
-                .filter(user -> user.getLogin().equals(login))
-                .findFirst().orElse(null);
-    }
-
     public User findByLoginAndPass(String login, String pass) {
         return userData.values().stream()
                 .filter(user -> user.getLogin().equals(login) && user.getPass().equals(pass))

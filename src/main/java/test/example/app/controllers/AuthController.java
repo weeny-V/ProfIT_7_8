@@ -10,10 +10,8 @@ import test.example.app.db.UsersDB;
 import test.example.app.model.User;
 import test.example.app.provider.JwtProvider;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
